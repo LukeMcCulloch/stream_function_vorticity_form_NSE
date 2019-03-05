@@ -24,12 +24,12 @@ Features
 --------
 
 - Cartesian Vorticity form of the Equations
-- Hemholtz Hodge Decompositin into a vorticity equation and a stream-function Poisson's equation.
+- Helmholtz Hodge Decomposition into a vorticity equation and a stream-function Poisson's equation.
 - Approximate factorization with lagged variables for the vorticity equations
 - Interior nodes discretized with central 2nd order accurate differences
-- Tridiagonal vorticity updates in x and y for fast sweeps.
+- Tri-diagonal vorticity updates in x and y for fast sweeps.
 - Boundary terms handled by augmented (1 sided FD)
-- Gauss Seidel wtih successive over-relaxation for the Poisson Update
+- Gauss-Seidel iteration with successive over-relaxation for the Poisson Update
   of the scalar stream function.
 - Fortran 90 implementation
 
@@ -55,11 +55,13 @@ Run the included fifi.dat inputs example with
 $  ./test fifi.dat test1.out
 
 - ./test runs the executable
-- fifi.dat selects the included input file_exists
-
-  This file itself has some documentation.
-
-- follow the prompts to select time step and SOR factor.
+- fifi.dat is the input file.
+- See fifi.dat for details.  Basic plate geometry,
+mesh size, and Reynolds number are set.
+- Courant number can be set here, but the code encourages
+experimentation with step sizes at runtime.
+- Suggestions for best results are given based on experience.
+- Once the code is running, follow the prompts to select time step and SOR factor.
 
 
 Results
