@@ -20,6 +20,11 @@ Indices and tables
 * :ref:`search`
 
 
+Link to Codebase:
+--------
+[code on github](https://github.com/LukeMcCulloch/stream_function_vorticity_form_NSE)
+
+
 Features
 --------
 
