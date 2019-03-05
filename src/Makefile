@@ -19,7 +19,7 @@ SOURCES = precise.f90 \
 	streamfunc.f90 \
 	inv.f90 \
 	update.f90 \
-	SFVE_fdV1-3.f90
+	FD_SFV_NSE.f90
 
 
 
