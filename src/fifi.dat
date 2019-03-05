@@ -1,0 +1,38 @@
+2D_SVVF_Model
+    0.   0.
+    1.   1.
+    151  151  600
+    1.
+    10.
+!!End of file
+!! File contents:
+!! xo, yo -> starting position for plate geometry
+!! lx, ly -> domain lengths
+!! ni, nj, nt -> points in x and y.  nt is not used!  specified at runtime...
+!! C   -> courant multiplier.  Does nothing at the moment.  Leave at 1. and follow prompts for best performance.
+!! Re  -> reynolds number
+
+!! mesh written for initial and final points to be b.c
+!!
+!! performance notes:
+
+!!Re 10
+!! 151 X 151 -> use SOR of 1.99  .0001 dt 78.3402930000 realsec to vor 2.7e-12 at 3.08480000000209 simseconds
+!! 101 x 101 -> use sor of 1.97  .0001 dt
+!! 51 x 51   -> use SOR of 1.99, .0001  dt-> 9.456575 rsec to vor 2.7e-12 at 3.2235 simsec
+!! 11 x 11   -> use SOR of 1.10  .0001 dt -> 1.69 rsec to 4.505700 simsec
+ 
+!!Re 100
+!! 151 X 151 -> use SOR of 1.96  .0001  dt
+!! 101 x 101 -> use SOR of 1.99  .003  dt -> 25.964 realsec to vor 0 at 44.913 simsec
+!!              use SOR of 1.96  .004  dt -> 16.3599 realsec to vor 0 at 38.32 simsec 
+!! 51 x 51   -> use SOR of 1.95, .001  dt
+!! 11 x 11   -> use SOR of 1.5
+
+!!Re1000
+!! 151 X 151 -> use SOR of 1.99  .005  dt -> 203.1553 realsec to vor 0 at 203.155334 simsec
+!! 101 x 101 -> use sor of 1.99  .005  dt -> 82.99308 realsec to vor 0 at 242.859999 simsec
+!! 101 x 101 -> use sor of 1.97  .003  dt -> 100.8979 realsec to vor 0 at 242.223999 simsec
+!! 51 x 51   -> use SOR of 1.95, .001  dt
+!! 11 x 11   -> use SOR of 1.5
+
