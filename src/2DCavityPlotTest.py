@@ -29,8 +29,8 @@ X,Y = meshgrid( arange(startx,stopx,stepx),arange(starty,stopy,stepy) )
 
 utlm   = np.loadtxt('u.dat')
 vtlm   = np.loadtxt('v.dat')
-uB   = np.loadtxt('uB.dat')
-vB   = np.loadtxt('vB.dat')
+#uB   = np.loadtxt('uB.dat')
+#vB   = np.loadtxt('vB.dat')
 vortlm= np.loadtxt('vorticity.dat')
 streamtlm = np.loadtxt('strm-func.dat')
 
