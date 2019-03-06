@@ -132,14 +132,17 @@ PROGRAM solver
   ENDIF
   INQUIRE(file=inputfile, exist=flexists)
   IF (flexists) THEN
-     Write(*,*) 'Startup:'
+
+     WRITE(*,*) ' -----------------------------------------------------------------------'
+     WRITE(*,*) ' -----------------------------------------------------------------------'
+     WRITE(*,*) 'Startup:'
      WRITE(6,'(AA)') ' input file,  ', inputfile
      WRITE(6,*) 'output file, ', outputfile  
      WRITE(6,'(A)') 'Stream Function Vorticity Equation Scheme'
-     Write(6,*)     ' Implementation By Luke McCulloch'
-     write(6,*) ''
-     Write(6,*)     ' Soving the 2D NSE SFVF for Cavity Flow'
-     write(6,*) '-----------------------------------------------------'
+     WRITE(6,*)     ' Implementation By Luke McCulloch'
+     WRITE(6,*) ''
+     WRITE(6,*)     ' Soving the 2D NSE SFVF for Cavity Flow'
+     WRITE(6,*) '-----------------------------------------------------'
      call input_discrete( inputfile, outputfile, title, & 
           xo,yo,xlength,ylength,ni,nj,nt,sigma,Re )
   ENDIF
@@ -183,12 +186,17 @@ PROGRAM solver
   !kinematic viscosity, nu:
   nu = xlength*1.0/Re 
   sigma = sigma*min( dx/(Re*nu/xlength)  ,  dy/(Re*nu/ylength))/2.
+
+  write(*,*) ' -----------------------------------------------------------------------'
+  write(*,*) ' -----------------------------------------------------------------------'
   write(*,*) 'max step size to try is ', sigma
-  write(*,*) 'recommended step size is ', 0.0001, 'see fifi.dat for more notes'
+  write(*,*) 'recommended step size is  0.0001  -- see fifi.dat for more notes'
   !write(*,'(A)',ADVANCE='NO') 'Enter a trial time step size (real) and num time steps (int):' 
   !read(*,*) dt, ntot
   write(*,'(A)',ADVANCE='NO') 'Enter a trial time step size (real, recommend ~ .0001):' 
   read(*,*) dt
+  write(*,*) ' -----------------------------------------------------------------------'
+  write(*,*) ' -----------------------------------------------------------------------'
   write(*,*) 'High time step will require low SOR number (recommend small time step and high SOR)'
   write(*,'(A)',ADVANCE='NO') 'Enter SOR number (recommend ~1.99):'
   read(*,*) SOR
