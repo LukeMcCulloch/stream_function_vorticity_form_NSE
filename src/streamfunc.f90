@@ -14,7 +14,7 @@ Contains
 
   subroutine stream_function(ni,nj,dx,dy,w,psi,ww,tol)
 
-    !! Currently a Gauss Slidell update
+    !! Currently a Gauss-Seidel update
     use precise, only : defaultp 
     IMPLICIT NONE 
     integer, parameter :: WP=defaultp

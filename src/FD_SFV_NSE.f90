@@ -85,7 +85,7 @@ PROGRAM solver
   real(wp) :: Re       ! reynolds num
   real(wp) :: time     ! actual time
   real(wp) :: svtm     ! saved time
-  real(wp) :: tol      ! tolerance value on gauss slidel
+  real(wp) :: tol      ! tolerance value on Gauss-Seidel
   real(wp) :: g        ! gravity
   real(wp) :: nu       ! kinematic viscocity
 
@@ -214,7 +214,7 @@ PROGRAM solver
   stsolution_str(:) = solution_str(:)
   stsolution(:)     = solution(:)
   !! initialize tolerance for the potential function
-  !! gauss slidell update
+  !! Gauss-Seidel update
   !tol=.0000000000000001
   tol = 0.0001
   !! initialize simulation time:
